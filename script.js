@@ -1,3 +1,7 @@
+$(function(){
+    //run this script if body tag is 'indexPage'
+    if($('body').is('.indexPage')){
+
 //initialize timeLeft variable with a number of 50
 var timeLeft = 50;
 
@@ -19,7 +23,7 @@ function init(){
     localStorage.setItem("score", 0);
     //local storage alert variable that will allow prompt status to be stored in memory
     localStorage.setItem('alerted', 'no');
-    
+    }
     //timer functionality
     quizTimer = setInterval(function(){
         //if the timer is less than or equal to zero run this 
@@ -40,7 +44,7 @@ function init(){
             }
             timeLeft-=1;
     }, 1000);
-        }
+        
 
 // create Quiz function that uses questions array as an object  
 function Quiz(questions) {
@@ -145,10 +149,87 @@ function showScores() {
     scoreTally.innerHTML = "Score : "+quiz.score;
     timeLeft = 0;
    
-};
-
-// display quiz
-init();
-populate();
+    }
+  }
 
 
+    // display quiz
+    init();
+    populate();
+
+});
+
+$(function(){
+
+    //only loads this script code when page is highscores.html
+    if($('body').is('.scoreBoardPage')){
+    //high scores are stored in local storage when game is ended
+        //score is assigned to variable and then local storage element 'score' is populated with quiz.score
+        //when user inputs name, name and local storage score is added as <li> on page
+        var scoreBoardElement = document.querySelector("#scoreBoardEl")
+        var scoreInput = document.querySelector("#scoreText")
+        var scoreForm = document.querySelector("#highScoresForm")
+        var score = localStorage.getItem(score);
+        var scores = [];
+
+        init();
+   
+        function init(){
+
+            //get stored scores from localStorage
+
+            var storedScores = JSON.parse(localStorage.getItem("scores"));
+
+            if (storedScores !== null){
+
+                scores = storedScores;
+
+            }
+
+            renderScores();
+
+        }
+
+        function renderScores(){
+
+            scoreBoardElement.innerHTML = "";
+
+            for (var i =0; i<scores.length; i++){
+                var score = scores[i];
+                var li = document.createElement("li");
+                li.textContent = score;
+                scoreBoardElement.appendChild(li);
+            
+            }
+           
+
+        }
+
+        
+        //when score form is sumbitted 
+        scoreForm.addEventListener("submit", function(event){
+            event.preventDefault();
+            
+            var scoreText = scoreInput.value.trim();
+            if (scoreText === ""){
+                return;
+            }
+
+
+            scores.push(localStorage.getItem('score') +" -- " + scoreText);
+                  
+            scoreInput.value = "";
+
+
+
+            storeScores();
+            renderScores();
+        })
+
+        function storeScores(){
+
+            localStorage.setItem("scores", JSON.stringify(scores));
+        }
+    }  
+
+});

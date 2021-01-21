@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highscores</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body class="scoreBoardPage">
+    
+    <div class="scoreBoard">
+
+        <h1>High Scores</h1>
+        <form id = "highScoresForm" method="POST">
+            <label for="addScore">Add Score to List:</label> 
+            <br>
+            <input type="text" placeholder="Please enter your name : " name="scoreText" id="scoreText" />
+        </form>
+        
+        <table id="scoreBoardTable">
+            <tr>
+                <td><ul id="scoreBoardEl"></ul></td>
+            </tr>
+            
+        </table>
+        
+
+
+        <footer>
+            <p id="footerEl"><a href="index.html">Restart</a></p>
+           
+        
+        </footer>
+    </div>    
+
+<script src="script.js"></script>
+
+</body>
+</html>
