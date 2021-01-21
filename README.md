@@ -10,7 +10,15 @@ Elements of the site include:
   * button click functionality <br />
   * functional timer
   
-Bellow is screen shots of an application called Codemap that allows the user to visualize code and see how functions / methods are related <br />
+Below are screen shots of the Website:
+
+1. index.html
+![quizApp1](screenShots/quizApp1.JPG?raw=true "index.html capture")
+
+2. highscores.html
+![quizApp2](screenShots/quizApp2.JPG?raw=true "highscores.html capture")
+
+Below are screen shots of an application called Codemap that allows the user to visualize code and see how functions / methods are related <br />
 
 Overview in Codemap of all functions:
 ![codeMapOverview](screenShots/codeMapOverview.JPG?raw=true "Codemap Overview")
