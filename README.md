@@ -9,3 +9,11 @@ Elements of the site include:
   * local storage utilization <br />
   * button click functionality <br />
   * functional timer
+  
+Bellow is screen shots of an application called Codemap that allows the user to visualize code and see how functions / methods are related <br />
+
+Overview in Codemap of all functions:
+![codeMapOverview](screenShots/codeMapOverview.JPG?raw=true "Codemap Overview")
+
+Specific relationships between populate() function and other functions
+![codeMapPopulateFunction](screenShots/codeMapPopulateFunction.JPG?raw=true "Populate Overview")
