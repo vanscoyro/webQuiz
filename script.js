@@ -18,7 +18,7 @@ var questions = [
 ];
 
 //function that runs when the page is initialized 
-Quiz.prototype.init = function(){
+function init(){
     //reset local storage 'score' value to zero when quiz started
     localStorage.setItem("score", 0);
     //local storage alert variable that will allow prompt status to be stored in memory
