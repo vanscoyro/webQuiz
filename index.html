@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="quizContainer">
+        <div id = "quiz">
+            
+            <h1>Quiz</h1>
+            
+            <!--/field that quiz question will be populated -->
+            <p id="question"></p> /
+
+            <div class="buttons">
+            <!-- button elements to be populated with answer choices -->
+                <button id="btn0"><span id="choice0"></span></button>
+                <button id="btn1"><span id="choice1"></span></button>
+                <button id="btn2"><span id="choice2"></span></button>
+                <button id="btn3"><span id="choice3"></span></button>
+            </div>
+            
+            <footer id="footerEl">
+            <!-- footer element that will track questsion number and link to highscores page -->
+                <p><a href="highscores.html">Highscores</a></p>
+                <p id="questionNum">Question x of y</p>    
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- container that will be populated with current score and current time left -->
+    <div id="infoContainer">
+        <h2 id="scoreNumber"></h2>
+        <h2>Timer</h2>
+        <p id="timer"></p>
+    </div>
+
+<!-- link to javascript file      -->
+<script src="script.js"></script>
+
+
+</body>
+
+
+</html>

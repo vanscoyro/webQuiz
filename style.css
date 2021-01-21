@@ -1,0 +1,68 @@
+.quizContainer {
+    width: 800px;
+    background-color: white;
+    border-radius: 5px;
+    padding : 10px;
+    box-shadow: 0 0 10px 2px;
+    margin: 0 auto;
+}
+
+.quizContainer h1 {
+    font-family: 'Staatliches', cursive;
+    background-color: black;
+    font-size: 60px;
+    text-align: center;
+    color: #ffffff;
+    padding: 2px 0px;
+    
+}
+.quizContainer #question {
+    font-family: 'Staatliches', cursive;
+    font-size: 30px;
+    color: black;
+    text-align: center;
+}
+
+#quiz{
+    font-family: 'Staatliches', cursive;
+    text-align: center;
+}
+
+.buttons {
+    font-family: 'Staatliches', cursive;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 0, auto;
+}
+
+#btn0, #btn1, #btn2, #btn3 {
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+#btn0:hover, #btn1:hover, #btn2:hover, #btn3:hover {
+    background-color: black;
+    color: white;
+}
+
+#btn0:focus, #btn1:focus, #btn2:focus, #btn3:focus {
+    outline: 0;
+}
+
+#footerEl {
+    font-family: 'Staatliches', cursive;
+
+    color: #2b2b2b;
+    font-size: 18px;
+    text-align: center;
+}
+
+#infoContainer{
+    font-family: 'Staatliches', cursive;
+    margin: 0, auto;
+    text-align: center;
+}
+
+
