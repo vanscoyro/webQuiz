@@ -23,13 +23,13 @@ Quiz.prototype.init = function(){
     localStorage.setItem("score", 0);
     //local storage alert variable that will allow prompt status to be stored in memory
     localStorage.setItem('alerted', 'no');
-    }
+    };
 
     //timer functionality
     quizTimer = setInterval(function(){
         //if the timer is less than or equal to zero run this 
         if (timeLeft <= 0){
-            document.getElementById("timer").innerHTML= "Quiz is over"
+            document.getElementById("timer").innerHTML= "Quiz is over";
             //sets a variable alerted to what is within the 'alerted' key in local storage
             var alerted = localStorage.getItem('alerted') || '';
             //this code ensures that the alert ('time is up') won't happen more than once
@@ -41,7 +41,7 @@ Quiz.prototype.init = function(){
             }
             showScores();
         }else{ //this code runs every second that the timer value is greater than or equal to 1
-                document.getElementById("timer").innerHTML= timeLeft + " seconds remaining!"
+                document.getElementById("timer").innerHTML= timeLeft + " seconds remaining!";
             }
             timeLeft-=1;
     }, 1000);
@@ -66,14 +66,14 @@ var quiz = new Quiz(questions);
 //gets the question index to express quesiton number in array 
 Quiz.prototype.getQuestionIndex = function() {
     return this.questions[this.questionIndex];
-}
+};
 
 //uses questionIndex() function to display the question index number in html
 function showProgress() {
     var currentQuestionNumber = quiz.questionIndex + 1;
     var element = document.getElementById("questionNum");
     element.innerHTML = "Question " + currentQuestionNumber + " of " + quiz.questions.length;
-};
+}
 
 
 //guess function that gets the users selected choice and compares it to the answer and increments question index
@@ -81,15 +81,15 @@ Quiz.prototype.guess = function(answer) {
     //if choice is correct, add one to score
     if(this.getQuestionIndex().isCorrectAnswer(answer)) {
         this.score++;
-    }else(timeLeft -= 5)    //if false, subtract 5 points
+    }else(timeLeft -= 5);    //if false, subtract 5 points
 
     this.questionIndex++;
-}
+};
 
 //function that runs when final quesiton has been answered
 Quiz.prototype.isEnded = function() {
     return this.questionIndex === this.questions.length;
-}
+};
 
 
 function Question(text, choices, answer) {
@@ -101,7 +101,7 @@ function Question(text, choices, answer) {
 //assigns the user choice to the answer
 Question.prototype.isCorrectAnswer = function(choice) {
     return this.answer === choice;
-}
+};
 
 
 function populate() {
@@ -125,15 +125,15 @@ function populate() {
 
         showProgress();
     }
-};
+}
 
 function guess(id, guess) {
     var button = document.getElementById(id);
     button.onclick = function() {
         quiz.guess(guess);
         populate();
-    }
-};
+    };
+}
 
 
 
@@ -142,7 +142,7 @@ function showScores() {
     
     var gameOverHTML = "<h1>Result</h1>";
     gameOverHTML += "<h2 id='score'> Your score is: " + quiz.score + "</h2>";
-    gameOverHTML += "<p><a href='highscores.html'>Highscores</a></p>"
+    gameOverHTML += "<p><a href='highscores.html'>Highscores</a></p>";
     var element = document.getElementById("quiz");
     element.innerHTML = gameOverHTML;
     localStorage.setItem("score", quiz.score);
@@ -167,9 +167,9 @@ $(function(){
     //high scores are stored in local storage when game is ended
         //score is assigned to variable and then local storage element 'score' is populated with quiz.score
         //when user inputs name, name and local storage score is added as <li> on page
-        var scoreBoardElement = document.querySelector("#scoreBoardEl")
-        var scoreInput = document.querySelector("#scoreText")
-        var scoreForm = document.querySelector("#highScoresForm")
+        var scoreBoardElement = document.querySelector("#scoreBoardEl");
+        var scoreInput = document.querySelector("#scoreText");
+        var scoreForm = document.querySelector("#highScoresForm");
         var score = localStorage.getItem(score);
         var scores = [];
 
@@ -225,7 +225,7 @@ $(function(){
 
             storeScores();
             renderScores();
-        })
+        });
 
         function storeScores(){
 
