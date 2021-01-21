@@ -18,12 +18,13 @@ var questions = [
 ];
 
 //function that runs when the page is initialized 
-function init(){
+Quiz.prototype.init = function(){
     //reset local storage 'score' value to zero when quiz started
     localStorage.setItem("score", 0);
     //local storage alert variable that will allow prompt status to be stored in memory
     localStorage.setItem('alerted', 'no');
     }
+
     //timer functionality
     quizTimer = setInterval(function(){
         //if the timer is less than or equal to zero run this 
